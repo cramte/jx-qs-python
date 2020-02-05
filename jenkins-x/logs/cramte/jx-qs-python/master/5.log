@@ -1,0 +1,119 @@
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-z2wg9[0m
+{"level":"warn","ts":1580939841.3132577,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1580939841.314409,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-qqbpd[0m
+{"level":"warn","ts":1580939842.2773504,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1580939842.2856557,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cramte-jx-qs-python-master-b88sc-87mlg[0m
+{"level":"warn","ts":1580939847.415376,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1580939850.569053,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/******/**-qs-python.git @ v0.0.5 in path /workspace/source"}
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:118b81488603297af78444cefb5cda05bb9fe168
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0006] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0006] Downloading base image python:onbuild        
+[36mINFO[0m[0008] Executing 3 build triggers                   
+[36mINFO[0m[0008] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0008] Checking for cached layer docker.io/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+[36mINFO[0m[0013] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0013] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0034] Taking snapshot of full filesystem...        
+[36mINFO[0m[0043] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0043] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0043] Taking snapshot of files...                  
+[36mINFO[0m[0043] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0043] cmd: /bin/sh                                 
+[36mINFO[0m[0043] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0045] Taking snapshot of full filesystem...        
+[36mINFO[0m[0049] Using files from context: [/workspace/source] 
+[36mINFO[0m[0049] COPY . /usr/src/app                          
+[36mINFO[0m[0049] Pushing layer docker.io/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0049] Taking snapshot of files...                  
+[36mINFO[0m[0049] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0049] COPY requirements.txt .                      
+[36mINFO[0m[0049] Taking snapshot of files...                  
+[36mINFO[0m[0049] ENV PORT 8080                                
+[36mINFO[0m[0049] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0049] EXPOSE 8080                                  
+[36mINFO[0m[0049] cmd: EXPOSE                                  
+[36mINFO[0m[0049] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0049] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0049] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0049] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0049] CMD ["app.py"]                               
+[36mINFO[0m[0049] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0052] error uploading layer to cache: failed to push to destination index.docker.io/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: unsupported status code 401; body:  
+2020/02/05 21:58:27 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2020/02/05 21:58:27 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2020/02/05 21:58:27 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2020/02/05 21:58:27 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2020/02/05 21:58:27 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2020/02/05 21:58:27 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2020/02/05 21:58:27 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2020/02/05 21:58:27 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2020/02/05 21:58:27 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2020/02/05 21:58:28 pushed blob: sha256:52c93fd8b1d4971d4ecd899e6fb24768deee38a46ead598b4e8667b7e9c991a7
+2020/02/05 21:58:29 pushed blob: sha256:73d2b0e5127a784ce31347b78e7899b9e8058fd808667a3781f8967fe7a8ff2c
+2020/02/05 21:58:29 pushed blob: sha256:7f8905dbad046d84701bfdfff04e1056b47c2897cc58daf6c491d2d70f174e56
+2020/02/05 21:58:29 pushed blob: sha256:50e4f11533bd7c503114d3d5d3b2f1dba854fb5d9fa5d9c542f395b5c249dbc8
+2020/02/05 21:58:33 pushed blob: sha256:93a6139382c2cca9377de0a2a22afd20ff102ab75b5dc2757000504dce735f3b
+2020/02/05 21:58:34 index.docker.io/******/**-qs-python:0.0.5: digest: sha256:4f3fbeeb324164be23f319606674cbd994c516a0bfc20e3cde2ccd13d8e7ed98 size: 2385
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/**-qs-python to an unshallow repository
+Generating change log from git ref 7515e12714f39d6cdf2a4ddcf5dccbb53468c2a9 => 6403751766c19428d43200475141b9fdf7141699
+WARNING: No release found for ******/**-qs-python and tag v0.0.5 so creating a new release
+Updated the release information at https://github.com/******/**-qs-python/releases/tag/v0.0.5
+generated: /workspace/source/charts/**-qs-python/templates/release.yaml
+Created Release **-qs-python-0-0-5 resource in namespace **
+Updating PipelineActivity ******-**-qs-python-master-5 with version 0.0.5
+Updated PipelineActivities ******-**-qs-python-master-5 with release notes URL: https://github.com/******/**-qs-python/releases/tag/v0.0.5
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file **-qs-python-0.0.5.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcramte-jx-qs-python-master-b88sc-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app **-qs-python version 0.0.5 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/******-org/environment-kind1-staging/pull/2
+Added label updatebot to Pull Request https://github.com/******-org/environment-kind1-staging/pull/2
+got git provider status pending from PR https://github.com/******-org/environment-kind1-staging/pull/2
+got git provider status pending from PR https://github.com/******-org/environment-kind1-staging/pull/2
+got git provider status pending from PR https://github.com/******-org/environment-kind1-staging/pull/2
+got git provider status pending from PR https://github.com/******-org/environment-kind1-staging/pull/2
+got git provider status pending from PR https://github.com/******-org/environment-kind1-staging/pull/2
+Pull Request https://github.com/******-org/environment-kind1-staging/pull/2 is merged at sha b1c6612c2a4bb26dcc07196a2cb5a37009c19f5c
+Pull Request merged but we are not waiting for the update pipeline to complete!
