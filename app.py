@@ -10,6 +10,7 @@ class MyHandler(BaseHTTPRequestHandler):
     """Handler for GET requests"""
     self.send_response(200)
     self.send_header('Content-type','image/png')
+    self.send_header('X-my-hdr','value')
     self.end_headers()
     with open('logo.png', 'rb') as f:
       self.wfile.write(f.read())
