@@ -1,0 +1,132 @@
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-qq926[0m
+{"level":"warn","ts":1580936088.2649004,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1580936088.2653153,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-bnq5l[0m
+{"level":"warn","ts":1580936089.122727,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1580936089.1246543,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cramte-jx-qs-python-pr-2-pr-bui-2qlfk-b6b9x[0m
+{"level":"warn","ts":1580936093.266871,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1580936097.7991452,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/******/**-qs-python.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b29959df06e74780d61765c16e32761af9c764f4,2:b7d66bccad054615add12f431d37906cb2a9a8eb
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow b7d66bccad054615add12f431d37906cb2a9a8eb: b29959df06e74780d61765c16e32761af9c764f4:
+DEBUG: ran git fetch --unshallow origin b7d66bccad054615add12f431d37906cb2a9a8eb: b29959df06e74780d61765c16e32761af9c764f4: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard b29959df06e74780d61765c16e32761af9c764f4
+DEBUG: ran git reset --hard b29959df06e74780d61765c16e32761af9c764f4 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge b7d66bccad054615add12f431d37906cb2a9a8eb
+DEBUG: ran git merge b7d66bccad054615add12f431d37906cb2a9a8eb in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e b29959df06e74780d61765c16e32761af9c764f4..HEAD
+Merged SHA b7d66bccad054615add12f431d37906cb2a9a8eb with commit message 'Test header' into base branch master
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0008] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0008] Downloading base image python:onbuild        
+[36mINFO[0m[0015] Executing 3 build triggers                   
+[36mINFO[0m[0015] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0015] Checking for cached layer docker.io/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+[36mINFO[0m[0021] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0021] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0040] Taking snapshot of full filesystem...        
+[36mINFO[0m[0045] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0045] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0045] Taking snapshot of files...                  
+[36mINFO[0m[0045] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0045] cmd: /bin/sh                                 
+[36mINFO[0m[0045] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0047] Taking snapshot of full filesystem...        
+[36mINFO[0m[0052] Pushing layer docker.io/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0052] Using files from context: [/workspace/source] 
+[36mINFO[0m[0052] COPY . /usr/src/app                          
+[36mINFO[0m[0052] Taking snapshot of files...                  
+[36mINFO[0m[0052] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0052] COPY requirements.txt .                      
+[36mINFO[0m[0052] Taking snapshot of files...                  
+[36mINFO[0m[0052] ENV PORT 8080                                
+[36mINFO[0m[0052] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0052] EXPOSE 8080                                  
+[36mINFO[0m[0052] cmd: EXPOSE                                  
+[36mINFO[0m[0052] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0052] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0052] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0052] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0052] CMD ["app.py"]                               
+[36mINFO[0m[0052] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0056] error uploading layer to cache: failed to push to destination index.docker.io/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: unsupported status code 401; body:  
+2020/02/05 20:56:01 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2020/02/05 20:56:01 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2020/02/05 20:56:01 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2020/02/05 20:56:01 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2020/02/05 20:56:01 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2020/02/05 20:56:01 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2020/02/05 20:56:01 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2020/02/05 20:56:01 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2020/02/05 20:56:01 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2020/02/05 20:56:02 pushed blob: sha256:05d80d06a642e8d78695d5e65b2cbe9e83bef091cfb49954253f4f35237d1ec0
+2020/02/05 20:56:03 pushed blob: sha256:9f68d216e7cda98d316b5569088e4ee3e5cd9d5197dc7892ae02d06afd5bce48
+2020/02/05 20:56:03 pushed blob: sha256:c8f353c9ad52c26b14929544d59542127e99714e5e5867606310203996c9390e
+2020/02/05 20:56:03 pushed blob: sha256:748e0232fe9bf3b4f7651889ff9961c52319f5227b8eab9499aff479ba41a07f
+2020/02/05 20:56:05 pushed blob: sha256:7a07384e7af6a01833cf561dc899fe72fedd6abed596f404dea59f186f9b85bb
+2020/02/05 20:56:05 index.docker.io/******/**-qs-python:0.0.0-SNAPSHOT-PR-2-1: digest: sha256:7c979edf3c961e5fe152294be01e902b264ee146481e1e5e84ac9496e151fbb0 size: 2385
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-2-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-2-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: docker.io\/******\/**-qs-python|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-2-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-2-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mcramte-jx-qs-python-pr-2-pr-bui-2qlfk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Created environment ******-**-qs-python-pr-2
+Namespace **-******-**-qs-python-pr-2 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 35.247.125.225.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: docker.io/******/**-qs-python
+    tag: 0.0.0-SNAPSHOT-PR-2-1
+
+Updating PipelineActivities ******-**-qs-python-pr-2-1 which has status Running
+WARNING: preview application http://**-qs-python.**-******-**-qs-python-pr-2.35.247.125.225.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.015212629s
+WARNING: preview application http://**-qs-python.**-******-**-qs-python-pr-2.35.247.125.225.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.320985784s
+WARNING: preview application http://**-qs-python.**-******-**-qs-python-pr-2.35.247.125.225.nip.io not available, error was 502 502 Bad Gateway, delaying for: 1.76182684s
+Preview application is now available at: http://**-qs-python.**-******-**-qs-python-pr-2.35.247.125.225.nip.io
